@@ -3,8 +3,8 @@ import {AiOutlineClose } from 'react-icons/ai';
 
 import PlayButton from './PlayButton';
 import FavoriteButton from './FavoriteButton';
-import useInfoModal from '@/hooks/useInfoModal';
 import useMovie from '@/hooks/useMovie';
+import useInfoModalStore from '@/hooks/useInfoModalStore';
 
 interface InfoModalProps {
     visible?: boolean;
@@ -14,8 +14,8 @@ interface InfoModalProps {
 const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
     const [isVisible, setIsVisible] = useState(!!visible);
 
-    const { movieId } = useInfoModal();
-    const { data = {} } = useMovie(movieId);
+    const { movieId } = useInfoModalStore();
+    const { data = {} } = useMovie(movieId as string);
 
     useEffect(() => {
         setIsVisible(!!visible)

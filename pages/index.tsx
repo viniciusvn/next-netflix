@@ -3,7 +3,7 @@ import InfoModal from "@/components/InfoModal";
 import MovieList from "@/components/MovieList";
 import Navbar from "@/components/Navbar";
 import useFavorites from "@/hooks/useFavorite";
-import useInfoModal from "@/hooks/useInfoModal";
+import useInfoModal from "@/hooks/useInfoModalStore";
 import useMovieList from "@/hooks/useMovieList";
 import { NextPageContext } from "next"
 import { getSession } from "next-auth/react"
